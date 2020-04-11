@@ -1,2 +1,2 @@
-# golang-learn-0
-https://www.udemy.com/course/learn-how-to-code/
+# go-learn-ardan-labs
+https://education.ardanlabs.com/bundles/Ardanlabsonline
