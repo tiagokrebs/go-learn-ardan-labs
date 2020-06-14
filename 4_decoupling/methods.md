@@ -43,3 +43,22 @@ Não é necessário separar um arquivo para cara type, considere melhorar a *rea
 ### Function/Method Variables
 Quando sabemos o data semantics sabemos o comportamento, quando sabemos o comportamento sabemos o custo, logo, temos a base para a engenharia.
 
+Como Go não é uma orientada a objetos a escrita de métodos *get* e *set* devem ser evitadas. APIs são escritas em Go para proporcionar uma funcionalidade, não apenas para mudar estados.
+
+Análise de data seemantics em `./methods/example3/example3.go`.
+```
+36 d.displayName()
+37 d.setAge(45)
+...
+42 data.displayName(d)
+43 (*data).setAge(&d, 45)
+```
+
+As linhas 42 e 43 representam a forma como o compilador faz a chamada das intruções das linhas 36 e 37.
+Quando atribuímos as funções de 36 e 37 a uma variável para então fazer a execução `f1 := d.displayName` o compilador vai se comportar de acordo com o data semantics vistos nas linhas 42 e 43.
+`d.displayName()` utiliza *value semantics*, o que gera uma cópia de `d`. Como o compilador não sabe o tamanho que `d` pode assumir nesse momento e o data semantics gera a necessidade do dado ser acessado por diferentes frames (decoupling) seu valor vai para a memória heap.
+`d.setAge(45)` utiliza *pointer semantics* compartilhando o valor original de `d`. Dessa forma a informação mão vai pra heap.
+
+Existem falhas em scape analisys, em `d.setAge(45)` na verdade gera double indirection com `d`, dessa forma o compilador não pode fazer a análise de código estático e coloca a informação na heap.
+
+O custo de *decoupling* é dado pelo *alocation* e *indirection* independente do *data semantic* que está em uso. Para um programa escrito em Go de super desempenho de processamento *decouplig* deve ser evitado ao máximo (evitando o uso de heap).
