@@ -1,0 +1,58 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+
+    "go.lintTool": "golint",
+    "go.goroot": "/usr/local/go",
+    "go.gopath": "/Users/bill/code/go",
+    "go.enableCodeLens": {"references": false, "runtest": false},
+
+    "go.useLanguageServer": true,
+    "[go]": {
+        "editor.snippetSuggestions": "none",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "gopls": {
+        "usePlaceholders": true, // add parameter placeholders when completing a function
+        "completeUnimported": true, // autocomplete unimported packages
+        // "watchChangedFiles": false,  // watch file changes outside of the editor
+        "deepCompletion": true,     // enable deep completion
+    },
+    "go.languageServerFlags": [
+        "-rpc.trace", // for more detailed debug logging
+    ],
+
+    "editor.fontSize": 14,
+    "editor.formatOnType": true,
+    "editor.mouseWheelZoom": false,
+    "editor.rulers": [80,120],
+    "editor.trimAutoWhitespace": true,
+    "editor.minimap.enabled": false,
+
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/dist/public": true,
+        "**/tmp": true,
+        "**/tags": true,
+        "**/public/dist": true,
+        "**/.vscode": true
+    },
+    "files.trimTrailingWhitespace": false,
+
+    "window.zoomLevel": 1,
+    "editor.wordWrap": "off",
+    "workbench.colorCustomizations": {
+        "editorLineNumber.foreground": "#9F9F9F"
+    },
+    "extensions.ignoreRecommendations": false,
+    "liveshare.featureSet": "insiders",
+    "workbench.colorTheme": "Zenburn",
+    "C_Cpp.updateChannel": "Insiders",
+    "go.coverOnTestPackage": false,
+    "liveshare.anonymousGuestApproval": "accept"
+}
