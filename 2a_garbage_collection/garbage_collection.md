@@ -8,7 +8,7 @@ O GC em Go é considerado:
 - Concorrente
 - Tri-color marking ou mark-and-sweep (algoritmos base)
 
-Talvez o aspecto mais importante seja o fato do GC ser concorrente, o está alocado na heap não é movido. Uma vez que a alocação é feita na heap aquele endereço está fixado até o final do lifetime daquela alocação.
+Talvez o aspecto mais importante seja o fato do GC ser concorrente, o que está alocado na heap não é movido. Uma vez que a alocação é feita na heap aquele endereço está fixado até o final do lifetime daquela alocação.
 
 o GC em Go possui duas prioridades principais: melhorar o throughput da aplicação durante a coleta e uso de recurso da memória.
 
