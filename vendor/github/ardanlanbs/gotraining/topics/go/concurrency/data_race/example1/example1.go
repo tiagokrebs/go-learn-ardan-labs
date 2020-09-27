@@ -35,6 +35,9 @@ func main() {
 				// Increment our local value of Counter.
 				value++
 
+				// O Println abaixo cria um context switch levando a uma race condition nesse programa
+				fmt.Println("logging")
+
 				// Store the value back into Counter.
 				counter = value
 			}
