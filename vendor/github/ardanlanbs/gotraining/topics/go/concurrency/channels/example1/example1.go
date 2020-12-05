@@ -20,7 +20,7 @@ func init() {
 
 func main() {
 
-	waitForResult()
+	// waitForResult()
 	// fanOut()
 
 	// waitForTask()
@@ -30,7 +30,7 @@ func main() {
 	// fanOutSem()
 	// boundedWorkPooling()
 	// drop()
-	// cancellation()
+	cancellation()
 }
 
 // waitForResult: You are a manager and you hire a new employee. Your new
@@ -255,6 +255,7 @@ func drop() {
 // wait and walk away.
 func cancellation() {
 	duration := 150 * time.Millisecond
+	// duration := 15 * time.Millisecond
 	ctx, cancel := context.WithTimeout(context.Background(), duration)
 	defer cancel()
 
