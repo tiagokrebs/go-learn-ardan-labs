@@ -10,7 +10,7 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/ardanlabs/gotraining/topics/go/concurrency/patterns/logger"
+	"./logger"
 )
 
 // device allows us to mock a device we write logs to.
